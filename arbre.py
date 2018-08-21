@@ -14,7 +14,7 @@ noeud["action"] = null;*/
 function createRacine(@partie) {
 	var noeud = [];
 	noeud["partie"] = partie;
-	noeud["type"] = "racine"; 
+	noeud["type"] = "max"; 
 	noeud["fils"] = [];
 	noeud["action"] = null;
 	return @noeud;
@@ -29,6 +29,7 @@ function addFeuille(@racine, @partie, @action) {
 	noeud["type"] = (racine["type"] == "max") ? "min" : "max"; //Hypothèse : on alterne les noeud min et max
 	noeud["fils"] = [];
 	noeud["action"] = action;
+	noeud["bestFils"] = null;
 	push(racine["fils"], @noeud);
 }
 
